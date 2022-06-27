@@ -1,0 +1,65 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 12-3-14 20:12
+Description: Sending packet
+
+java.lang.NullPointerException
+	at net.minecraft.network.MemoryConnection.processOrCachePacket(MemoryConnection.java:169)
+	at net.minecraft.network.MemoryConnection.addToSendQueue(MemoryConnection.java:57)
+	at net.minecraft.network.NetServerHandler.sendPacketToPlayer(NetServerHandler.java:669)
+	at net.minecraft.server.management.ServerConfigurationManager.updateTimeAndWeatherForPlayer(ServerConfigurationManager.java:929)
+	at net.minecraft.server.management.ServerConfigurationManager.initializeConnectionToPlayer(ServerConfigurationManager.java:134)
+	at net.minecraft.server.integrated.IntegratedServerListenThread.networkTick(IntegratedServerListenThread.java:97)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:691)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:587)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:129)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:484)
+	at net.minecraft.server.ThreadMinecraftServer.run(ThreadMinecraftServer.java:16)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.network.MemoryConnection.processOrCachePacket(MemoryConnection.java:169)
+	at net.minecraft.network.MemoryConnection.addToSendQueue(MemoryConnection.java:57)
+
+-- Packet being sent --
+Details:
+	Packet ID: 4
+	Packet class: net.minecraft.network.packet.Packet4UpdateTime
+Stacktrace:
+	at net.minecraft.network.NetServerHandler.sendPacketToPlayer(NetServerHandler.java:669)
+	at net.minecraft.server.management.ServerConfigurationManager.updateTimeAndWeatherForPlayer(ServerConfigurationManager.java:929)
+	at net.minecraft.server.management.ServerConfigurationManager.initializeConnectionToPlayer(ServerConfigurationManager.java:134)
+	at net.minecraft.server.integrated.IntegratedServerListenThread.networkTick(IntegratedServerListenThread.java:97)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:691)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:587)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:129)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:484)
+	at net.minecraft.server.ThreadMinecraftServer.run(ThreadMinecraftServer.java:16)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.6.4
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.7.0_21, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 726999512 bytes (693 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 89629 (5019224 bytes; 4 MB) allocated, 89629 (5019224 bytes; 4 MB) used
+	Suspicious classes: FML and Forge are installed
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 63
+	FML: MCP v8.11 FML v6.4.45.953 Minecraft Forge 9.11.1.953 5 mods loaded, 5 mods active
+	mcp{8.09} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	FML{6.4.45.953} [Forge Mod Loader] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Forge{9.11.1.953} [Minecraft Forge] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	mymod{1.0} [Tristan Mod] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	troublemod{T.S.} [Troublesome Mod] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 47340 (2651040 bytes; 2 MB) allocated, 47340 (2651040 bytes; 2 MB) used
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

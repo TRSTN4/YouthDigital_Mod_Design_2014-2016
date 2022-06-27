@@ -1,0 +1,82 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 20-2-14 14:49
+Description: Ticking screen
+
+java.lang.NullPointerException
+	at java.net.URLEncoder.encode(Unknown Source)
+	at net.minecraft.client.multiplayer.NetClientHandler.urlEncode(NetClientHandler.java:336)
+	at net.minecraft.client.multiplayer.NetClientHandler.sendSessionRequest(NetClientHandler.java:318)
+	at net.minecraft.client.multiplayer.NetClientHandler.handleServerAuthData(NetClientHandler.java:299)
+	at net.minecraft.network.packet.Packet253ServerAuthData.processPacket(Packet253ServerAuthData.java:51)
+	at net.minecraft.network.TcpConnection.processReadPackets(TcpConnection.java:462)
+	at net.minecraft.client.multiplayer.NetClientHandler.processReadPackets(NetClientHandler.java:281)
+	at net.minecraft.client.multiplayer.GuiConnecting.updateScreen(GuiConnecting.java:51)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1580)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:910)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:838)
+	at net.minecraft.client.main.Main.main(Main.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.net.URLEncoder.encode(Unknown Source)
+	at net.minecraft.client.multiplayer.NetClientHandler.urlEncode(NetClientHandler.java:336)
+	at net.minecraft.client.multiplayer.NetClientHandler.sendSessionRequest(NetClientHandler.java:318)
+	at net.minecraft.client.multiplayer.NetClientHandler.handleServerAuthData(NetClientHandler.java:299)
+	at net.minecraft.network.packet.Packet253ServerAuthData.processPacket(Packet253ServerAuthData.java:51)
+	at net.minecraft.network.TcpConnection.processReadPackets(TcpConnection.java:462)
+	at net.minecraft.client.multiplayer.NetClientHandler.processReadPackets(NetClientHandler.java:281)
+	at net.minecraft.client.multiplayer.GuiConnecting.updateScreen(GuiConnecting.java:51)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.multiplayer.GuiConnecting
+Stacktrace:
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1580)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:910)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:838)
+	at net.minecraft.client.main.Main.main(Main.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.6.4
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.7.0_21, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 971745720 bytes (926 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Suspicious classes: FML and Forge are installed
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v8.11 FML v6.4.45.953 Minecraft Forge 9.11.1.953 5 mods loaded, 5 mods active
+	mcp{8.09} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	FML{6.4.45.953} [Forge Mod Loader] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Forge{9.11.1.953} [Minecraft Forge] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	mymod{1.0} [Tristan Mod] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	troublemod{T.S.} [My Troublesome Mod] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Launched Version: 1.6
+	LWJGL: 2.9.0
+	OpenGL: Intel(R) HD Graphics Family GL version 3.0.0 - Build 8.15.10.2253, Intel
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Pack: Default
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null

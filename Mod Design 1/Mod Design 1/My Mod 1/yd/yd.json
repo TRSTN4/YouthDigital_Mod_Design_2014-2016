@@ -1,0 +1,29 @@
+{  
+  "libraries": [    
+    {
+      "name": "client_file",  
+      "filename" : "1.6.4.jar",
+      "url" : "https://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/1.6.4.jar",
+      "comment" : "minecraft client jar"
+    },
+    {
+      "name": "server_file",
+      "filename" : "minecraft_server.1.6.4.jar",
+      "url" : "https://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/minecraft_server.1.6.4.jar",
+      "comment" : "minecraft server jar"
+    },
+    {
+      "name": "launcher_jar",
+      "filename": "launchwrapper-1.8.jar",      
+      "url" : "https://libraries.minecraft.net/net/minecraft/launchwrapper/1.8/launchwrapper-1.8.jar",
+      "path" : "included/libraries/net/minecraft/launchwrapper/1.8",
+      "comment" : "minecraft launcher"
+    },
+     {
+      "name": "mcp_file",
+      "filename": "mcp811.zip",
+      "url" : "http://mcp.ocean-labs.de/files/archive/mcp811.zip",
+      "comment" : "mcp archive"
+    }
+  ]
+}

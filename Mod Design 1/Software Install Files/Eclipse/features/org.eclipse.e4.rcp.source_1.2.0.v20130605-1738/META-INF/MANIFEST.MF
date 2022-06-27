@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.7.0_11
+Built-By: e4Build
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+
+Name: epl-v10.html
+SHA1-Digest: jYDaDJLBJpthCwPMgGFVYASJjIU=
+
+Name: build.properties
+SHA1-Digest: S8VRcOWYVgA2D9RKjUiDNuYo/fw=
+
+Name: eclipse_update_120.jpg
+SHA1-Digest: xstAqMgs/a5AsQXQZSdDQ79veOA=
+
+Name: license.html
+SHA1-Digest: /vLZjlHkZSXMSfPrWwNqOUDqqbM=
+
+Name: feature.properties
+SHA1-Digest: ErOuK+OW9530EzDqXaxOXH6i+H4=
+
+Name: feature.xml
+SHA1-Digest: Nss0+Ki2zt2sX+7cG0IMxe9aWCw=
+

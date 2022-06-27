@@ -1,0 +1,167 @@
+package mymod;
+
+import mymod.items.MyFood;
+
+import mymod.items.MyItem;
+import mymod.items.MyPickaxe;
+import mymod.items.MySword;
+import mymod.proxies.CommonProxy;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
+
+
+
+/* 	MOD INFO */
+	@Mod( modid = "mymod", name = "Tristan Mod", version = "1.0")
+	@NetworkMod(clientSideRequired=true, serverSideRequired=false)	
+
+
+public class Main {
+
+/*	PROXY INFO */
+	@SidedProxy(clientSide = "mymod.proxies.ClientProxy", serverSide = "mymod.proxies.CommonProxy")
+	public static CommonProxy proxy;
+		
+	
+/**	
+ * DECLARATION SECTION 
+ * *********************************************************** */
+
+//  DECLARE THE SWORD 
+        public static Item MySword_1;
+
+//  DECLARE THE PICKAXE 
+        public static Item MyPickaxe_1;
+        
+//  DECLARE NEW TOOL MATERIAL
+                                                            /** Harvest Leve1, Max Uses, Efficiency (f), Damage (f), Enchantability */
+        public static EnumToolMaterial MyToolMaterial = EnumHelper.addToolMaterial("The Super", 3, 500, 16.0F, 3.0F, 10);
+
+//  DECLARE THE ITEM
+        public static Item MyItem_1;
+
+//  DECLARE THE FOOD
+        public static Item MyFood_1;
+        
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */	
+
+
+@EventHandler	
+	public  void preInit( FMLPreInitializationEvent event ) 
+	{
+/**	
+ * LOAD SECTION 
+ * *********************************************************** */ 
+
+
+//  LOAD THE SWORD
+        MySword_1 = new MySword(2021, EnumToolMaterial.IRON, "MySword_1");
+        GameRegistry.registerItem(MySword_1, "MySword_1");
+        LanguageRegistry.addName(MySword_1, "Super Sword");   
+	
+//  LOAD THE PICKAXE
+        MyPickaxe_1 = new MyPickaxe(2022, EnumToolMaterial.IRON, "MyPickaxe_1");
+        GameRegistry.registerItem(MyPickaxe_1, "MyPickaxe_1");
+        LanguageRegistry.addName(MyPickaxe_1, "Emerald Pickaxe");
+
+//  LOAD THE ITEM
+        MyItem_1 = new MyItem(2030, "MyItem_1").setCreativeTab(CreativeTabs.tabMaterials).setMaxStackSize(16);
+        GameRegistry.registerItem(MyItem_1, "MyItem_1");
+        LanguageRegistry.addName(MyItem_1, "HamBurger");
+
+//  LOAD THE FOOD
+        MyFood_1 = new MyFood(2040, 3, 3.0F, true, "MyFood_1");
+        GameRegistry.registerItem(MyFood_1, "MyFood_1");
+        LanguageRegistry.addName(MyFood_1, "Muffin");
+        
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */	
+
+	}
+
+@EventHandler
+	public static void init( FMLInitializationEvent event ) 
+	{
+	
+/**	
+ * RECIPES SECTION 
+ * *********************************************************** */
+
+
+
+//  SWORD RECIPE  
+        GameRegistry.addRecipe(new ItemStack(MySword_1, 1), new Object[]
+        {
+                "X",
+                "X",
+                "S",
+            'S', Item.redstone,
+            'X', Item.diamond,
+        });
+
+//  PICKAXE RECIPE  
+        GameRegistry.addRecipe(new ItemStack(MyPickaxe_1, 1), new Object[]
+        {
+                "XXX",
+                " S ",
+                " S ",
+            'S', Item.stick,
+            'X', Item.emerald,
+        });
+        
+    //  ITEM RECIPE         
+        GameRegistry.addRecipe(new ItemStack(MyItem_1, 1), new Object[]
+        {
+                " S ",
+                " X ",
+                " S ",
+            'S', Item.bread,
+            'X', Item.beefCooked,
+        });    
+     
+     //  FOOD RECIPE         
+        GameRegistry.addRecipe(new ItemStack(MyFood_1, 1), new Object[]
+        {
+                "  ",
+                " X ",
+                " S ",
+            'S', Item.paper,
+            'X', Item.sugar,
+        });
+           
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */	
+
+	
+/**	
+ * EXTRA METHODS SECTION 
+ * *********************************************************** */
+
+
+        
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */	
+
+	
+	}
+
+@EventHandler
+	public static void postInit( FMLPostInitializationEvent event ) 
+	{
+
+	}
+	
+}
